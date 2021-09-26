@@ -1,7 +1,7 @@
 import express, { Express } from "express";
 
 import cors from "cors";
-import cypressRunner from "./cypressRunner";
+import plantingRunner from "./plantingRunner";
 const app: Express = express();
 const port = 3333;
 
@@ -10,11 +10,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
 
-app.post("/createText", async (req: any, res: any) => {
+app.post("/startGardening", async (req: any, res: any) => {
   const {
     body: { login, pass, plant },
   } = req;
-  cypressRunner(login, pass, plant);
+  plantingRunner(login, pass, plant);
 });
 
 app.listen(port, () => {

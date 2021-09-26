@@ -1,12 +1,13 @@
 import * as cypress from "cypress";
 
-const cypressRunner = (
+const plantingRunner = (
   login: string,
   pass: string,
   plant: string,
   timer?: number
 ) => {
-  function runCypress(login: string, pass: string, plant: string) {
+  function runPlanting(login: string, pass: string, plant: string) {
+    console.log("STARTED:", login);
     cypress
       .run({
         // the path is relative to the current working directory
@@ -18,15 +19,15 @@ const cypressRunner = (
         },
       })
       .then((results) => {
+        console.log("PLANTED:", login);
         console.log(results);
-
       })
       .catch((err) => {
         console.error(err);
       });
   }
 
-  runCypress(login, pass, plant);
+  runPlanting(login, pass, plant);
 };
 
-export default cypressRunner;
+export default plantingRunner;

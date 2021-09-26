@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
-const cypressRunner_1 = __importDefault(require("./cypressRunner"));
+const plantingRunner_1 = __importDefault(require("./plantingRunner"));
 const app = (0, express_1.default)();
 const port = 3333;
 //Middleware
@@ -23,23 +23,7 @@ app.use(express_1.default.json());
 app.use((0, cors_1.default)());
 app.post("/createText", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body: { login, pass, plant }, } = req;
-    (0, cypressRunner_1.default)(login, pass, plant);
-    //   cypress
-    //     .run({
-    //       // the path is relative to the current working directory
-    //       spec: "cypress/integration/plant.spec.js",
-    //       env: {
-    //         login_user: `${req.body.login}`,
-    //         login_pass: `${req.body.pass}`,
-    //         plant: `${req.body.plant}`,
-    //       },
-    //     })
-    //     .then((results) => {
-    //       console.log(results);
-    //     })
-    //     .catch((err) => {
-    //       console.error(err);
-    //     });
+    (0, plantingRunner_1.default)(login, pass, plant);
 }));
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
