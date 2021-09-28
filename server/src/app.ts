@@ -12,9 +12,9 @@ app.use(cors());
 
 app.post("/startGardening", async (req: any, res: any) => {
   const {
-    body: { login, pass, plant },
+    body: { login, pass, plant,harvestTime },
   } = req;
-  plantingRunner(login, pass, plant);
+  plantingRunner(login, pass, plant,harvestTime);
 });
 
 app.listen(port, () => {

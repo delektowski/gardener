@@ -31,6 +31,10 @@ Cypress.Commands.add("login", () => {
     cy.get('#submitlogin').click({force: true}).wait(1000);
 });
 
+Cypress.Commands.add('logout', () => {
+    cy.get('#logout').click({force: true})
+});
+
 
 Cypress.Commands.add('plantingOrWatering', () => {
     const checkIsNoObstacle = (str) => {
