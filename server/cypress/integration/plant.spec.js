@@ -12,7 +12,7 @@ describe("Planting", () => {
       .click({ force: true })
       .wait(500)
       .plantingOrWatering();
+    //  Logout
+    cy.logout();
   });
-  //  Logout
-  cy.logout();
 });
