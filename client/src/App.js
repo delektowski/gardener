@@ -1,10 +1,12 @@
-import LoginForm from "./components/LoginForm/LoginForm";
+import GardnerForm from "./components/GardnerForm/GardnerForm";
+import styles from './index.module.css'
 
 function App() {
   return (
-    <main>
-      <h1>Ogrodnik23</h1>
-      <LoginForm />
+    <main className={styles.container}>
+      <h1>Ogrodnik</h1>
+      <GardnerForm />
+      <GardnerForm />
     </main>
   );
 }

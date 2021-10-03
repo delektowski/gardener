@@ -21,9 +21,9 @@ const port = 3333;
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use(express_1.default.json());
 app.use((0, cors_1.default)());
-app.post("/createText", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { body: { login, pass, plant }, } = req;
-    (0, plantingRunner_1.default)(login, pass, plant);
+app.post("/startGardening", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { body: { login, pass, plant, harvestTime }, } = req;
+    (0, plantingRunner_1.default)(login, pass, plant, harvestTime);
 }));
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
