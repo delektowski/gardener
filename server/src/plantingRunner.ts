@@ -37,6 +37,7 @@ function plantingRunner(
     plant: string,
     harvestTime: number
   ) {
+    console.log("harvestTime", harvestTime)
     console.log("STARTED23:", login);
     cypress
       .run({
