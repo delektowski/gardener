@@ -38,28 +38,28 @@ function plantingRunner(
     harvestTime: number
   ) {
     console.log("STARTED23:", login);
-    // cypress
-    //   .run({
-    //     // the path is relative to the current working directory
-    //     spec: "cypress/integration/plant.spec.js",
-    //     env: {
-    //       login_user: login,
-    //       login_pass: pass,
-    //       plant: plant,
-    //       harvestTime: harvestTime,
-    //     },
-    //   })
-    //   .then((results) => {
-    //     console.log("PLANTED:", login);
-    //     setTimeout(
-    //       () => runHarvesting(login, pass, plant, harvestTime),
-    //       harvestTime
-    //     );
-    //   })
-    //   .catch((err) => {
-    //     console.error(err);
-    //   });
-    runHarvesting(login, pass, plant, harvestTime)
+    cypress
+      .run({
+        // the path is relative to the current working directory
+        spec: "cypress/integration/plant.spec.js",
+        env: {
+          login_user: login,
+          login_pass: pass,
+          plant: plant,
+          harvestTime: harvestTime,
+        },
+      })
+      .then((results) => {
+        console.log("PLANTED:", login);
+        setTimeout(
+          () => runHarvesting(login, pass, plant, harvestTime),
+          harvestTime
+        );
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+
   }
 
   runPlanting(login, pass, plant, harvestTime);
