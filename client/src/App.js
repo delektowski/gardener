@@ -6,7 +6,6 @@ function App() {
     <main className={styles.container}>
       <h1>Ogrodnik</h1>
       <GardnerForm />
-      <GardnerForm />
     </main>
   );
 }

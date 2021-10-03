@@ -6,11 +6,12 @@ const GardnerForm = () => {
   const [pass, setPass] = useState("");
   const [plant, setPlant] = useState("");
   const [harvestTime, setHarvestTime] = useState(0);
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
     const rawResponse = await fetch(
-      "http://localhost:3333/startGardening",
+      "http://192.168.191.47:3333/startGardening",
       {
         method: "POST",
         headers: {
