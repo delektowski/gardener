@@ -2,16 +2,16 @@ import { useState } from "react";
 import styles from "./gardnerForm.module.css";
 
 const GardnerForm = () => {
-  const [login, setLogin] = useState("");
-  const [pass, setPass] = useState("");
-  const [plant, setPlant] = useState("");
-  const [harvestTime, setHarvestTime] = useState(0);
+  const [login, setLogin] = useState("sympatyczna");
+  const [pass, setPass] = useState("Bombowiec");
+  const [plant, setPlant] = useState("#regal_2");
+  const [harvestTime, setHarvestTime] = useState(700000);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
     const rawResponse = await fetch(
-      "http://192.168.191.47:3333/startGardening",
+      "http://localhost:3333/startGardening",
       {
         method: "POST",
         headers: {
@@ -45,14 +45,14 @@ const GardnerForm = () => {
   return (
     <section className={styles.container}>
       <label htmlFor="login">Login:</label>
-      <input type="text" id="login" name="login" onChange={handleLogin} />
+      <input value={login} type="text" id="login" name="login" onChange={handleLogin} />
       <label htmlFor="pass">Password:</label>
-      <input type="text" id="pass" name="pass" onChange={handlePass} />
+      <input value={pass} type="text" id="pass" name="pass" onChange={handlePass} />
       <label htmlFor="plant">Plant:</label>
-      <input type="text" id="plant" name="plant" onChange={handlePlant} />
+      <input value={plant} type="text" id="plant" name="plant" onChange={handlePlant} />
       <label htmlFor="harvestTime">Harvest Time:</label>
       <input
-        type="number"
+        value={harvestTime} type="number"
         id="harvestTime"
         name="harvestTime"
         onChange={handleHarvestTime}
