@@ -11,7 +11,7 @@ const GardnerForm = () => {
     e.preventDefault();
 
     const rawResponse = await fetch(
-      "http://localhost:3333/startGardening",
+      "http://192.168.191.47:3333/startGardening",
       {
         method: "POST",
         headers: {
